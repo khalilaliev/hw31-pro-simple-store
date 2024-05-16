@@ -1,0 +1,76 @@
+export const productCategories = {
+  Electronics: {
+    "Computers & Accessories": [
+      { id: 1, title: "Laptop", price: 999.99 },
+      { id: 2, title: "Desktop Computer", price: 799.99 },
+      { id: 3, title: "Computer Monitor", price: 199.99 },
+      { id: 4, title: "Keyboard & Mouse", price: 49.99 },
+      { id: 5, title: "Printer & Scanner", price: 149.99 },
+    ],
+    "Smartphones & Accessories": [
+      { id: 6, title: "Smartphone", price: 699.99 },
+      { id: 7, title: "Phone Case & Cover", price: 19.99 },
+      { id: 8, title: "Screen Protector", price: 9.99 },
+      { id: 9, title: "Charger & Cable", price: 14.99 },
+      { id: 10, title: "Bluetooth Headset", price: 29.99 },
+    ],
+    "Audio & Video": [
+      { id: 11, title: "Headphones & Earphones", price: 59.99 },
+      { id: 12, title: "Speaker", price: 89.99 },
+      { id: 13, title: "Home Theater System", price: 499.99 },
+      { id: 14, title: "MP3 Player", price: 39.99 },
+      { id: 15, title: "Television", price: 599.99 },
+    ],
+    "Cameras & Photography": [
+      { id: 16, title: "Digital Camera", price: 299.99 },
+      { id: 17, title: "DSLR Camera", price: 899.99 },
+      { id: 18, title: "Camera Lens", price: 249.99 },
+      { id: 19, title: "Tripod & Monopod", price: 49.99 },
+      { id: 20, title: "Camera Bag & Case", price: 39.99 },
+    ],
+    "Home Appliances": [
+      { id: 21, title: "Refrigerator", price: 1199.99 },
+      { id: 22, title: "Washing Machine", price: 699.99 },
+      { id: 23, title: "Microwave Oven", price: 149.99 },
+      { id: 24, title: "Vacuum Cleaner", price: 199.99 },
+      { id: 25, title: "Air Conditioner", price: 499.99 },
+    ],
+  },
+  "Clothing & Accessories": {
+    "Men's Clothing": [
+      { id: 26, title: "T-Shirt", price: 19.99 },
+      { id: 27, title: "Shirt", price: 29.99 },
+      { id: 28, title: "Jeans", price: 49.99 },
+      { id: 29, title: "Jacket & Coat", price: 99.99 },
+      { id: 30, title: "Suit & Blazer", price: 149.99 },
+    ],
+    "Women's Clothing": [
+      { id: 31, title: "Dress", price: 39.99 },
+      { id: 32, title: "Top & Blouse", price: 29.99 },
+      { id: 33, title: "Skirt", price: 24.99 },
+      { id: 34, title: "Pants & Leggings", price: 34.99 },
+      { id: 35, title: "Lingerie & Sleepwear", price: 19.99 },
+    ],
+    "Kids' Clothing": [
+      { id: 36, title: "Baby Romper & Onesie", price: 14.99 },
+      { id: 37, title: "Kids' Top & T-Shirt", price: 9.99 },
+      { id: 38, title: "Boys' Jeans & Pants", price: 19.99 },
+      { id: 39, title: "Girls' Dress & Skirt", price: 24.99 },
+      { id: 40, title: "Children's Outerwear", price: 49.99 },
+    ],
+    "Shoes & Footwear": [
+      { id: 41, title: "Sneakers", price: 59.99 },
+      { id: 42, title: "Boots", price: 89.99 },
+      { id: 43, title: "Sandals & Flip-Flops", price: 19.99 },
+      { id: 44, title: "Dress Shoes", price: 79.99 },
+      { id: 45, title: "Athletic Shoes", price: 69.99 },
+    ],
+    Accessories: [
+      { id: 46, title: "Bag & Backpack", price: 49.99 },
+      { id: 47, title: "Watch", price: 149.99 },
+      { id: 48, title: "Sunglasses", price: 19.99 },
+      { id: 49, title: "Hat & Cap", price: 14.99 },
+      { id: 50, title: "Jewelry", price: 29.99 },
+    ],
+  },
+};
