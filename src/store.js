@@ -23,7 +23,6 @@ const getProductsByCategory = (category, subcategory) => {
 const renderProductData = (data) => {
   buttons.forEach((button) => {
     button.addEventListener("click", () => {
-      console.log("clicked");
       box.innerHTML = "";
       data.forEach((product, index) => {
         const productDiv = document.createElement("div");
