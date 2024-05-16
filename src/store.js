@@ -1,7 +1,10 @@
 import "../style.css";
 
-import { productCategories } from "./products";
-import { hideAlert } from "./helpers";
+// import { productCategories } from "./products";
+// import { hideAlert } from "./helpers";
+
+import { productCategories } from "../src/products";
+import { hideAlert } from "../src/helpers";
 
 const buttons = document.querySelectorAll(".buttons");
 const ul = document.getElementById("ul");
@@ -20,6 +23,7 @@ const getProductsByCategory = (category, subcategory) => {
 const renderProductData = (data) => {
   buttons.forEach((button) => {
     button.addEventListener("click", () => {
+      console.log("clicked");
       box.innerHTML = "";
       data.forEach((product, index) => {
         const productDiv = document.createElement("div");

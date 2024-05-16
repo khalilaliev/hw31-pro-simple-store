@@ -5,7 +5,7 @@
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./css/main.css">
-    <title>hw31-pro</title>
+    <title>Simple Store</title>
   </head>
   <body>
     <div class="navbar">
@@ -14,14 +14,154 @@
         <a class="navbar-item">HILLEL</a>
       </div>
       <div class="navbar-center">
-        <a class="navbar-item navbar-active">Home</a>
+        <a class="navbar-item navbar-active">Simple Store</a>
         <a href="./pages/store.html" class="navbar-item">Simple Store</a>
         <a class="navbar-item">Smile Vote</a>
       </div>
     </div>
+    <div id="title-box" class="title">
+      <h1 class="title-h2">Choose your product!</h1>
+    </div>
+    <div id="alert" class="alert alert-success alert-custom hidden">
+      <svg
+        width="48"
+        height="48"
+        viewBox="0 0 48 48"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          fill-rule="evenodd"
+          clip-rule="evenodd"
+          d="M24 4C12.96 4 4 12.96 4 24C4 35.04 12.96 44 24 44C35.04 44 44 35.04 44 24C44 12.96 35.04 4 24 4ZM18.58 32.58L11.4 25.4C10.62 24.62 10.62 23.36 11.4 22.58C12.18 21.8 13.44 21.8 14.22 22.58L20 28.34L33.76 14.58C34.54 13.8 35.8 13.8 36.58 14.58C37.36 15.36 37.36 16.62 36.58 17.4L21.4 32.58C20.64 33.36 19.36 33.36 18.58 32.58Z"
+          fill="#00BA34"
+        />
+      </svg>
+      <div class="flex flex-col">
+        <span>Congratulations!</span>
+        <span class="text-content2">You have just bought our product!</span>
+      </div>
+    </div>
+    <div class="container">
+      <aside class="sidebar h-full justify-start">
+        <section class="sidebar-content h-fit min-h-[20rem] overflow-visible">
+          <nav class="menu rounded-md">
+            <section class="menu-section px-4">
+              <ul class="menu-items">
+                <li>
+                  <input type="checkbox" id="menu-1" class="menu-toggle" />
+                  <label
+                    id="label"
+                    class="menu-item justify-between"
+                    for="menu-1"
+                  >
+                    <div class="flex gap-2">
+                      <span>Categories</span>
+                    </div>
+                    <span class="menu-icon">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        class="h-5 w-5"
+                        viewBox="0 0 20 20"
+                        fill="currentColor"
+                      >
+                        <path
+                          fill-rule="evenodd"
+                          d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                          clip-rule="evenodd"
+                        />
+                      </svg>
+                    </span>
+                  </label>
+                  <div class="menu-item-collapse">
+                    <div class="min-h-0">
+                      <button class="buttons menu-item-disabled menu-item ml-6">
+                        Products
+                      </button>
+                      <button
+                        class="buttons menu-item ml-6"
+                        data-category="Electronics"
+                        data-subcategory="Computers & Accessories"
+                      >
+                        Computers & Accessories
+                      </button>
+                      <button
+                        class="buttons menu-item ml-6"
+                        data-category="Electronics"
+                        data-subcategory="Smartphones & Accessories"
+                      >
+                        Smartphones & Accessories
+                      </button>
+                      <button
+                        class="buttons menu-item ml-6"
+                        data-category="Electronics"
+                        data-subcategory="Audio & Video"
+                      >
+                        Audio & Video
+                      </button>
+                      <button
+                        class="buttons menu-item ml-6"
+                        data-category="Electronics"
+                        data-subcategory="Cameras & Photography"
+                      >
+                        Cameras & Photography
+                      </button>
+                      <button
+                        class="buttons menu-item ml-6"
+                        data-category="Electronics"
+                        data-subcategory="Home Appliances"
+                      >
+                        Home Appliances
+                      </button>
+                      <button
+                        class="buttons menu-item ml-6"
+                        data-category="Clothing & Accessories"
+                        data-subcategory="Men's Clothing"
+                      >
+                        Men's Clothing
+                      </button>
+                      <button
+                        class="buttons menu-item ml-6"
+                        data-category="Clothing & Accessories"
+                        data-subcategory="Women's Clothing"
+                      >
+                        Women's Clothing
+                      </button>
+                      <button
+                        class="buttons menu-item ml-6"
+                        data-category="Clothing & Accessories"
+                        data-subcategory="Kids' Clothing"
+                      >
+                        Kids' Clothing
+                      </button>
+                      <button
+                        class="buttons menu-item ml-6"
+                        data-category="Clothing & Accessories"
+                        data-subcategory="Shoes & Footwear"
+                      >
+                        Shoes & Footwear
+                      </button>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </section>
+          </nav>
+        </section>
+      </aside>
+      <ul id="ul"></ul>
+      <div id="box" class="card hidden">
+        <div class="card-body">
+          <h2 id="h2" class="card-header"></h2>
+          <p id="p" class="text-content2"></p>
+          <div class="card-footer">
+              <button class="btn-secondary btn">Buy</button>
+            </div>
+        </div>
+      </div>
+    </div>
     
-    
-    
+    <script type="module" src="./src/store.js"></script>
     <script type="module" src="/main.js"></script>
   </body>
 </html>
