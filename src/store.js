@@ -12,6 +12,9 @@ const box = document.getElementById("box");
 const label = document.getElementById("label");
 const alert = document.getElementById("alert");
 const titleBox = document.getElementById("title-box");
+const formBox = document.getElementById("formBox");
+const container = document.querySelector(".container");
+const modalCard = document.getElementById("modalCard");
 
 const getProductsByCategory = (category, subcategory) => {
   if (productCategories[category] && productCategories[category][subcategory]) {
@@ -44,9 +47,11 @@ const renderProductData = (data) => {
         productDiv.appendChild(cardBody);
         box.appendChild(productDiv);
         btnBuy.addEventListener("click", () => {
+          container.style.marginTop = "100px";
           titleBox.style.display = "none";
-          alert.style.display = "block";
-          hideAlert();
+          formBox.style.display = "block";
+          // alert.style.display = "block";
+          // hideAlert();
         });
       });
       box.style.display = "block";
@@ -68,4 +73,56 @@ buttons.forEach((button) => {
 
 label.addEventListener("click", () => {
   box.style.display = "none";
+});
+
+function getFormValues() {
+  const formBox = document.querySelector("#formBox");
+  const inputs = formBox.querySelectorAll("input, textarea, select");
+  const values = {};
+
+  inputs.forEach((input) => {
+    if (input.type === "checkbox" || input.type === "radio") {
+      values[input.id] = input.checked;
+    } else if (input.tagName.toLowerCase() === "select") {
+      values[input.id] = input.options[input.selectedIndex].value;
+    } else {
+      values[input.id] = input.value;
+    }
+  });
+
+  return values;
+}
+
+document.querySelector("#orderButton").addEventListener("click", () => {
+  console.log("click");
+  formBox.style.display = "none";
+  modalCard.style.display = "block";
+
+  // const formValues = getFormValues();
+  // console.log(formValues);
+});
+
+function displayOrderInfo(values) {
+  document.querySelector(
+    "#fullName"
+  ).innerText = `Full name: ${values.name} ${values.surname}`;
+  document.querySelector("#emailInfo").innerText = `Email: ${values.email}`;
+  document.querySelector("#phoneInfo").innerText = `Phone: ${values.phone}`;
+  document.querySelector("#cityInfo").innerText = `City: ${values.city}`;
+  document.querySelector(
+    "#addressInfo"
+  ).innerText = `Address: ${values.address}`;
+  document.querySelector(
+    "#paymentMethodInfo"
+  ).innerText = `Payment method: ${values.paymentMethod}`;
+  document.querySelector(
+    "#messageInfo"
+  ).innerText = `Message: ${values.message}`;
+}
+
+document.querySelector("#orderButton").addEventListener("click", () => {
+  const formValues = getFormValues();
+  console.log(formValues);
+
+  displayOrderInfo(formValues);
 });

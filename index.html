@@ -20,7 +20,7 @@
     <div id="title-box" class="title">
       <h1 class="title-h2">Choose your product!</h1>
     </div>
-    <div id="alert" class="alert alert-success alert-custom hidden">
+    <!-- <div id="alert" class="alert alert-success alert-custom hidden">
       <svg
         width="48"
         height="48"
@@ -39,7 +39,7 @@
         <span>Congratulations!</span>
         <span class="text-content2">You have just bought our product!</span>
       </div>
-    </div>
+    </div> -->
     <div class="container">
       <aside class="sidebar h-full justify-start">
         <section class="sidebar-content h-fit min-h-[20rem] overflow-visible">
@@ -147,7 +147,150 @@
           </nav>
         </section>
       </aside>
-      <ul id="ul"></ul>
+
+      <div>
+        <div id="modalCard" class="card">
+          <div class="card-body overflow-hidden">
+            <h2 class="card-header">Thanks for your Order!</h2>
+            <p class="text-content2 font-semibold">
+              Your order information is below
+            </p>
+            <p class="text-content2 font-semibold" id="fullName"></p>
+            <p class="text-content2 font-semibold" id="emailInfo"></p>
+            <p class="text-content2 font-semibold" id="phoneInfo"></p>
+            <p class="text-content2 font-semibold" id="cityInfo"></p>
+            <p class="text-content2 font-semibold" id="addressInfo"></p>
+            <p class="text-content2 font-semibold" id="paymentMethodInfo"></p>
+            <p class="text-content2 font-semibold" id="messageInfo"></p>
+            <div class="card-footer flex justify-center mt-2">
+              <button class="btn-primary btn w-full">Close menu</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="formBox" class="form">
+        <section class="bg-gray-2 rounded-xl">
+          <div class="p-8 shadow-lg">
+            <form class="space-y-4">
+              <div class="w-full">
+                <label class="sr-only" for="name">Name</label>
+                <input
+                  class="input input-solid max-w-full"
+                  placeholder="Name"
+                  type="text"
+                  id="name"
+                />
+              </div>
+              <div class="w-full">
+                <label class="sr-only" for="surname">Name</label>
+                <input
+                  class="input input-solid max-w-full"
+                  placeholder="Surname"
+                  type="text"
+                  id="surname"
+                />
+              </div>
+
+              <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
+                <div>
+                  <label class="sr-only" for="email">Email</label>
+                  <input
+                    class="input input-solid"
+                    placeholder="Email address"
+                    type="email"
+                    id="email"
+                  />
+                </div>
+
+                <div>
+                  <label class="sr-only" for="phone">Phone</label>
+                  <input
+                    class="input input-solid"
+                    placeholder="Phone Number"
+                    type="tel"
+                    id="phone"
+                  />
+                </div>
+              </div>
+
+              <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
+                <div>
+                  <label class="sr-only">City</label>
+                  <input
+                    name="city"
+                    list="cities"
+                    class="input input-solid"
+                    placeholder="City"
+                    id="city"
+                  />
+                  <datalist id="cities">
+                    <option value="Kyiv" />
+                    <option value="Kharkiv" />
+                    <option value="Odesa" />
+                    <option value="Dnipro" />
+                    <option value="Zaporizhzhia" />
+                    <option value="Kherson" />
+                    <option value="Mykolaiv" />
+                    <option value="Kryvyi Rih" />
+                    <option value="Lviv" />
+                  </datalist>
+                </div>
+
+                <div>
+                  <label class="sr-only">Address</label>
+                  <input
+                    name="address"
+                    list="addresses"
+                    class="input input-solid"
+                    placeholder="Address"
+                    id="address"
+                  />
+                  <datalist id="addresses">
+                    <option value="Address №1" />
+                    <option value="Address №2" />
+                    <option value="Address №3" />
+                    <option value="Address №4" />
+                    <option value="Address №5" />
+                    <option value="Address №6" />
+                    <option value="Address №7" />
+                    <option value="Address №8" />
+                    <option value="Address №9" />
+                  </datalist>
+                </div>
+              </div>
+              <select id="payment" class="select select-solid">
+                <option>Payment method</option>
+                <option>Card</option>
+                <option>Cash</option>
+                <option>Don't wanna pay</option>
+              </select>
+
+              <div class="w-full">
+                <label class="sr-only" for="message">Message</label>
+
+                <textarea
+                  class="textarea textarea-solid max-w-full"
+                  placeholder="Message"
+                  rows="8"
+                  id="message"
+                ></textarea>
+              </div>
+
+              <div class="mt-4">
+                <button
+                  id="orderButton"
+                  type="button"
+                  class="rounded-lg btn btn-primary btn-block"
+                >
+                  Make an order
+                </button>
+              </div>
+            </form>
+          </div>
+        </section>
+      </div>
+
       <div id="box" class="card hidden">
         <div class="card-body">
           <h2 id="h2" class="card-header"></h2>

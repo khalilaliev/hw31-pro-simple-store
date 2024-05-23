@@ -1,6 +1,4 @@
-
-
-.container{
+.container {
   margin: 0 auto;
   padding: 0 15px;
   /* margin-top: 30px; */
@@ -8,23 +6,21 @@
   justify-content: space-between;
 }
 
-
-
-.title{
+.title {
   text-align: center;
   margin: 30px 0;
 }
-.title-h2{
+.title-h2 {
   font-size: 30px;
 }
 
-.custom{
+.custom {
   padding: 10px;
   border-radius: 12px;
-  transition: all .2s linear;
+  transition: all 0.2s linear;
 }
 
-.custom:active{
+.custom:active {
   transform: scale(0.97);
 }
 
@@ -32,6 +28,13 @@
   max-width: 400px;
   margin: 30px auto;
 }
-.sidebar{
+.sidebar {
   border-radius: 12px;
+}
+
+#formBox {
+  display: none;
+}
+#modalCard {
+  display: none;
 }
