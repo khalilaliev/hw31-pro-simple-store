@@ -15,6 +15,8 @@ const titleBox = document.getElementById("title-box");
 const formBox = document.getElementById("formBox");
 const container = document.querySelector(".container");
 const modalCard = document.getElementById("modalCard");
+const closeButton = document.getElementById("closeButton");
+const orderButton = document.getElementById("orderButton");
 
 const getProductsByCategory = (category, subcategory) => {
   if (productCategories[category] && productCategories[category][subcategory]) {
@@ -37,7 +39,7 @@ const renderProductData = (data) => {
         cardBody.classList.add("card-body");
         h2.classList.add("card-header");
         p.classList.add("text-content2");
-        btnBuy.className = "btn, btn-primary custom";
+        btnBuy.className = "btn btn-primary custom";
         btnBuy.innerHTML = "Buy";
         h2.innerHTML = `${index + 1}. ${product.title}`;
         p.innerHTML = `Price: ${product.price}$`;
@@ -76,7 +78,6 @@ label.addEventListener("click", () => {
 });
 
 function getFormValues() {
-  const formBox = document.querySelector("#formBox");
   const inputs = formBox.querySelectorAll("input, textarea, select");
   const values = {};
 
@@ -93,16 +94,8 @@ function getFormValues() {
   return values;
 }
 
-document.querySelector("#orderButton").addEventListener("click", () => {
-  console.log("click");
-  formBox.style.display = "none";
-  modalCard.style.display = "block";
-
-  // const formValues = getFormValues();
-  // console.log(formValues);
-});
-
 function displayOrderInfo(values) {
+  console.log(values);
   document.querySelector(
     "#fullName"
   ).innerText = `Full name: ${values.name} ${values.surname}`;
@@ -114,15 +107,30 @@ function displayOrderInfo(values) {
   ).innerText = `Address: ${values.address}`;
   document.querySelector(
     "#paymentMethodInfo"
-  ).innerText = `Payment method: ${values.paymentMethod}`;
+  ).innerHTML = `Payment method: ${values.payment}`;
   document.querySelector(
     "#messageInfo"
   ).innerText = `Message: ${values.message}`;
 }
 
-document.querySelector("#orderButton").addEventListener("click", () => {
-  const formValues = getFormValues();
-  console.log(formValues);
+orderButton.addEventListener("click", (event) => {
+  const form = document.querySelector("form");
+  if (!form.checkValidity()) {
+    event.preventDefault();
+  } else {
+    event.preventDefault();
+    const formValues = getFormValues();
+    displayOrderInfo(formValues);
+    formBox.style.display = "none";
+    modalCard.style.display = "block";
+    form.reset();
+  }
+});
 
-  displayOrderInfo(formValues);
+closeButton.addEventListener("click", () => {
+  modalCard.style.display = "none";
+  box.style.display = "none";
+  container.style.marginTop = "0";
+  alert.style.display = "block";
+  hideAlert();
 });

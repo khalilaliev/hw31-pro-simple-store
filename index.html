@@ -20,7 +20,7 @@
     <div id="title-box" class="title">
       <h1 class="title-h2">Choose your product!</h1>
     </div>
-    <!-- <div id="alert" class="alert alert-success alert-custom hidden">
+    <div id="alert" class="alert alert-success alert-custom hidden">
       <svg
         width="48"
         height="48"
@@ -39,7 +39,7 @@
         <span>Congratulations!</span>
         <span class="text-content2">You have just bought our product!</span>
       </div>
-    </div> -->
+    </div>
     <div class="container">
       <aside class="sidebar h-full justify-start">
         <section class="sidebar-content h-fit min-h-[20rem] overflow-visible">
@@ -163,7 +163,9 @@
             <p class="text-content2 font-semibold" id="paymentMethodInfo"></p>
             <p class="text-content2 font-semibold" id="messageInfo"></p>
             <div class="card-footer flex justify-center mt-2">
-              <button class="btn-primary btn w-full">Close menu</button>
+              <button id="closeButton" class="btn-primary btn w-full">
+                Close menu
+              </button>
             </div>
           </div>
         </div>
@@ -180,15 +182,17 @@
                   placeholder="Name"
                   type="text"
                   id="name"
+                  required
                 />
               </div>
               <div class="w-full">
-                <label class="sr-only" for="surname">Name</label>
+                <label class="sr-only" for="surname">Surname</label>
                 <input
                   class="input input-solid max-w-full"
                   placeholder="Surname"
                   type="text"
                   id="surname"
+                  required
                 />
               </div>
 
@@ -200,6 +204,7 @@
                     placeholder="Email address"
                     type="email"
                     id="email"
+                    required
                   />
                 </div>
 
@@ -210,19 +215,21 @@
                     placeholder="Phone Number"
                     type="tel"
                     id="phone"
+                    required
                   />
                 </div>
               </div>
 
               <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
                 <div>
-                  <label class="sr-only">City</label>
+                  <label class="sr-only" for="city">City</label>
                   <input
                     name="city"
                     list="cities"
                     class="input input-solid"
                     placeholder="City"
                     id="city"
+                    required
                   />
                   <datalist id="cities">
                     <option value="Kyiv" />
@@ -238,13 +245,14 @@
                 </div>
 
                 <div>
-                  <label class="sr-only">Address</label>
+                  <label class="sr-only" for="address">Address</label>
                   <input
                     name="address"
                     list="addresses"
                     class="input input-solid"
                     placeholder="Address"
                     id="address"
+                    required
                   />
                   <datalist id="addresses">
                     <option value="Address №1" />
@@ -259,8 +267,8 @@
                   </datalist>
                 </div>
               </div>
-              <select id="payment" class="select select-solid">
-                <option>Payment method</option>
+              <select id="payment" class="select select-solid" required>
+                <option value="" disabled selected>Payment method</option>
                 <option>Card</option>
                 <option>Cash</option>
                 <option>Don't wanna pay</option>
@@ -268,19 +276,19 @@
 
               <div class="w-full">
                 <label class="sr-only" for="message">Message</label>
-
                 <textarea
                   class="textarea textarea-solid max-w-full"
                   placeholder="Message"
                   rows="8"
                   id="message"
+                  required
                 ></textarea>
               </div>
 
               <div class="mt-4">
                 <button
                   id="orderButton"
-                  type="button"
+                  type="submit"
                   class="rounded-lg btn btn-primary btn-block"
                 >
                   Make an order
